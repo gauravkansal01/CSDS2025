@@ -5,12 +5,19 @@
   </head>
   <body>
     <script>
-      function add(a, b, c = 60) {
-        return a + b + c; // return the value
-      }
+      // function add(a, b, c = 60) {
+      //   return a + b + c; // return the value
+      // }
 
-      let x = add(20, 30, 40); // call the function
-      console.log(x); // print the value
+      // let x = add(20, 30, 40); // call the function
+      // console.log(x); // print the value
+
+      let x = function (a, b) {
+        return a + b;
+      };
+
+      let y = x(30, 30);
+      console.log(y);
     </script>
   </body>
 </html>
