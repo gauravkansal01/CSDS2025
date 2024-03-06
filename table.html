@@ -12,12 +12,14 @@
       // let x = add(20, 30, 40); // call the function
       // console.log(x); // print the value
 
-      let x = function (a, b) {
+      let x = function (a, b=20) {
         return a + b;
       };
-
-      let y = x(30, 30);
-      console.log(y);
+      console.log(x(20));
+      let y = x;
+      console.log(y(30, 70));
+      // let y = x(30, 30);
+      // console.log(y);
     </script>
   </body>
 </html>
