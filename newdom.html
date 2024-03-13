@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input1" />
+    <input type="text" id="input2" />
+    <button onclick="func()">+</button>
+    <p id="p1">value</p>
+
+    <script>
+      function func() {
+        let val1 = document.getElementById("input1").value;
+        console.log(val1);
+
+        let val2 = document.getElementById("input2").value;
+        console.log(val2);
+        let sum = Number(val1) + Number(val2);
+        console.log(sum);
+
+        document.getElementById("p1").innerHTML = sum;
+      }
+    </script>
+  </body>
+</html>
