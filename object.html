@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Object Demo</title>
+  </head>
+  <body>
+    <script>
+      // let student = {
+      //   name: "Gaurav",
+      // };
+
+      // console.log(student);
+      // console.log(student.name);
+
+      // student.course = "Btech"; // adding new key and value
+
+      // console.log(student.course);
+
+      // const { name } = student; // Object Destructuring
+      // console.log(name);
+
+      // student.name = "Mohan"; // updating the value
+
+      // console.log(student.name);
+      // console.log(student["name"]);
+
+      // console.log(student);
+
+      // student["email-id"] = "abc@abesit.edu";
+
+      // console.log(student);
+
+      // student.func = function () {
+      //   return 2;
+      // };
+
+      // console.log(student);
+      // console.log(student.func());
+
+      // const { course, func } = student; // function destructuring
+
+      // console.log(func());
+
+      // //this keyword
+      // student.func2 = function () {
+      //   return this.name + " in " + this.course;
+      // };
+
+      // console.log(student.func2());
+
+      // // adding object in object -- nesting a object
+      // student.obj2 = { key1: "val1", key2: "val2" };
+
+      // console.log(student.obj2.key1);
+
+      // const {
+      //   obj2: { key1, key2 },
+      // } = student;
+
+      // console.log(key1);
+
+      // // Spread Syntax/Operator
+      // // Spread syntax helps us clone an object with the
+      // //most straightforward syntax using the curly braces
+      // // and three dots {...}
+
+      let user = {
+        name: "Raj",
+        address: "Crossing republic",
+        age: 20,
+      };
+
+      // // creating a clone of object user by using spread operator
+
+      // const clone = { ...user };
+
+      // console.log(user);
+      // console.log(clone);
+
+      // // Add properties to objects
+
+      // const updatedUser = { ...user, salary: 12345 }; // add property salary
+      // console.log(user);
+      // console.log(updatedUser);
+
+      // //Nested objects
+
+      // const user1 = {
+      //   name: "Raj",
+      //   address: "Crossing Republic",
+      //   age: 20,
+      //   department: {
+      //     cname: "CSE",
+      //     Specialization: "DS",
+      //     address: {
+      //       city: "ABESIT",
+      //       street: "DME",
+      //       zip: 201001,
+      //     },
+      //   },
+      // };
+
+      // const cloneuser1 = { ...user1 };
+      // console.log(cloneuser1);
+
+      // // updating nesting object property
+
+      // const updateNest = {
+      //   ...user1,
+
+      //   department: {
+      //     ...user1.department,
+      //     section: "A",
+      //   },
+      // };
+
+      // console.log(updateNest);
+
+      // Rest Parameter
+
+      // the rest parameter is mostly used with destructuring syntax to
+      //consolidate the remaining properties in a new object you're
+      //working with.
+
+      const { age, ...cld } = user;
+
+      console.log(age, cld);
+
+      cld.phno = 123456;
+      console.log(cld);
+
+      for (key in cld) {
+        console.log(cld[key]);
+      }
+
+      // let student1 = {
+      //   name: "gaurav",
+      //   course: "cse",
+      //   address: {
+      //     location: "crossing republic",
+      //     city: "ghaziabad",
+      //     state: "up",
+      //   },
+      // };
+    </script>
+  </body>
+</html>

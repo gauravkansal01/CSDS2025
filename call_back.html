@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Call Back</title>
+  </head>
+  <body>
+    <script>
+      // // Example 1
+      // function callbackfunc() {
+      //   console.log("Hi I am CallBack function"); // Call Back Function definition same as normal function
+      // }
+
+      // function calee(cbfunc) {
+      //   console.log("Hi i am calling call back");
+      //   cbfunc();
+      // }
+      // calee(callbackfunc);
+
+      // // // //Example 2
+
+      // function calee2(cbfunc) {
+      //   console.log("Hi i am calling call back function again");
+      //   cbfunc();
+      // }
+
+      // calee2(function () {
+      //   console.log("Hi am again callback function ! Hello");
+      // }); // call back function as anonymous function
+
+      // calee2(() => console.log("Hi am again callback function ! Hello"));
+      // // // call back function as arrow function
+
+      // // // Example 3 -- call back functions with argument
+
+      // function clsum(a, b) {
+      //   return a + b;
+      // }
+
+      // function cldif(a, b) {
+      //   return a - b;
+      // }
+
+      // function calsd(a, b, fn) {
+      //   console.log("The answer is");
+      //   return fn(a, b);
+      // }
+
+      // console.log(calsd(20, 5, cldif));
+      // console.log(calsd(40, 10, clsum));
+
+      // // // Example 4
+
+      // function isOdd(number) {
+      //   return number % 2 != 0;
+      // }
+      // function isEven(number) {
+      //   return number % 2 == 0;
+      // }
+
+      // function filter(numbers, fn) {
+      //   let results = [];
+      //   for (const number of numbers) {
+      //     if (fn(number)) {
+      //       results.push(number);
+      //     }
+      //   }
+      //   return results;
+      // }
+      // let numbers = [1, 2, 4, 7, 3, 5, 6];
+
+      // console.log(filter(numbers, isOdd));
+      // console.log(filter(numbers, isEven));
+
+      // //Asyn CallBack -- Wrong
+
+      function download1(url) {
+        setTimeout(() => {
+          console.log("Downloading ${url}...");
+        }, 1000);
+      }
+      function process1(picture) {
+        console.log("Processing ${picture}");
+      }
+
+      let url1 =
+        "https://cdn.pixabay.com/photo/2013/03/01/18/40/crispus-87928_640.jpg";
+
+      download1(url1);
+      process1(url1);
+
+      // // Right One using callback process is call back in download
+
+      function download2(url, fn) {
+        setTimeout(() => {
+          console.log(`Downloading ${url} .. `);
+          fn(url);
+        }, 2000);
+      }
+
+      function process2(url) {
+        console.log(`Process ${url}`);
+      }
+      let url2 =
+        "https://cdn.pixabay.com/photo/2013/03/01/18/40/crispus-87928_640.jpg";
+
+      download2(url2, process2);
+
+      // // CallBack hell or Pyramid of Doom
+      // // Suppose you have to download 3 pictures , one after the other
+
+      // function download(url, callback) {
+      //   setTimeout(() => {
+      //     console.log(`Downloading ${url} ...`);
+      //     callback(url);
+      //   }, 1000);
+      // }
+
+      // const urla = "https://www.javascripttutorial.net/pic1.jpg";
+      // const urlb = "https://www.javascripttutorial.net/pic2.jpg";
+      // const urlc = "https://www.javascripttutorial.net/pic3.jpg";
+
+      // download(urla, function (urla) {
+      //   console.log(`Processing ${urla}`);
+      //   download(urlb, function (urlb) {
+      //     console.log(`Processing ${urlb}`);
+      //     download(urlc, function (urlc) {
+      //       console.log(`Processing ${urlc}`);
+      //     });
+      //   });
+      // });
+    </script>
+  </body>
+</html>

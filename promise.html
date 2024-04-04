@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Promise</title>
+  </head>
+  <body>
+    <script>
+      // const cart = ["shoes", "pants", "kurta"];
+
+      //createOrder(cart); // create an order using cart values and return orderId
+
+      // After creating order proceed for payment on the basis of orderId
+      //proceedToPayment(orderId);
+
+      //solution using callback -- as createorder can take time to complete and it must complete before proceedToPayment
+
+      //createOrder(cart, function (orderId) {
+      //  proceedToPayment(orderId);
+      // });
+
+      // Promise -- an object
+
+      //const promise = createOrder(cart);
+
+      // createorder function will return promise object -- a blank object {data:undefine} with data as property and undefined as value . After complete execution of aync operation of createorder function it will be filled by orderId returned by createOrder.
+
+      // As soon as the promise object filled with data , promise object execute our proceedToPayment function
+      //promise.then(function (orderId) {
+      //  proceedToPayment(orderId);
+      //});
+
+      const User = "https://api.github.com/users/gauravkansal01";
+
+      const pr = fetch(User);
+
+      console.log(pr);
+
+      pr.then((data) => {
+        console.log(data);
+      });
+
+
+      
+      // const promise = createOrder(cart);
+
+      // promise.then(function () {
+      //   proceedToPayment(orderId);
+      // });
+
+      // // producer the promise
+
+      // function createOder(cart) {
+      //   const pr = new Promise(function (resolve, reject) {
+      //     // create an order
+      //     // validate cart
+      //     // order id
+
+      //     if (!validateCart(cart)) {
+      //       const err = new Error("cart is not valid");
+      //       reject(err);
+      //     }
+      //     const orderId = "12345";
+      //     if (orderId) {
+      //       resolve(orderid);
+      //     }
+      //   });
+
+      //   return pr;
+      // }
+    </script>
+  </body>
+</html>
